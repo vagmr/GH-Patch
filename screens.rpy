@@ -402,7 +402,7 @@ screen navigation():
 
         textbutton _("Preferences") action ShowMenu("preferences")
 
-        textbutton _("关于汉化") style "vagmrts_about_button" action ShowMenu("vagmrts_author")
+        textbutton _("vagmr汉化") style "vagmrts_about_button" action ShowMenu("vagmrts_author")
         
         if not _in_replay:
             textbutton _("Gallery") action ShowMenu("gallery")
