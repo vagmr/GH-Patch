@@ -1,4 +1,4 @@
-# Grandma's House 汉化补丁
+# GH 汉化补丁
 
 ## 项目说明
 
@@ -46,6 +46,7 @@
 ## 相关链接
 
 - [爱发电主页](https://afdian.com/a/vagmrMc)
+- [游戏官方地址](https://www.patreon.com/moonboxgames)
 
 ## 贡献
 

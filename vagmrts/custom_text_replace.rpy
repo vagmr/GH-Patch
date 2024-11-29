@@ -3,7 +3,7 @@
     import re
     def replace_text(t):
         ### Chinese
-        if _preferences.language == "chinese":
+        if _preferences.language == "vagmrts":
             t = t.replace("Allison" , "艾莉森")
             t = t.replace("Amelia" , "阿米莉亚")
             t = t.replace("Elizabeth" , "伊丽莎白")
@@ -53,6 +53,9 @@
             t = t.replace("Williams" , "威廉姆斯")
             t = t.replace("Missus" , "太太")
             t = t.replace("Miller" , "米勒")
+
+#########
+
             t = t.replace("Monkey" , "猴")
             t = t.replace("Zeus" , "宙斯")
             t = t.replace("Pet" , "宠物")
@@ -86,6 +89,16 @@
             t = t.replace("Morning" , "上午")
             t = t.replace("Evening" , "傍晚")
            
+#########我的
+            t = t.replace("GH-About" , "版本说明")
+            t = t.replace("afdian" , "爱发电")
+            t = t.replace("Name: " , "姓名：")
+            ## 关系界面的名字
+            t = t.replace("Amy" , "艾米")
+            t = t.replace("Liz" , "莉兹")
+            t = t.replace("Cat" , "凯特")
+            t = t.replace("Maria" , "玛丽亚")
+            t = t.replace("Veena" , "帕韦纳")
 
 
 

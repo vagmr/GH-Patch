@@ -4,13 +4,15 @@ translate vagmrts strings:
 
     # game/relMenu.rpy:513
     old "Name: Allison [nLastName]"
-    new "姓名：艾莉森 [nLastName]"
+    new "姓名：艾莉森"
     # game/relMenu.rpy:516
     old "Age: 61"
     new "年龄：61"
+
     # game/relMenu.rpy:519
     old "Marital Status: Widowed"
     new "婚姻状况：丧偶"
+
     # game/relMenu.rpy:522
     old "Relationship: [gm!c]"
     new "关系：[gm!c]"

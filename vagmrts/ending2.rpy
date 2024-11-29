@@ -4,5 +4,5 @@
 translate vagmrts endSeasonTwo_83f03a3f:
 
     # "The next morning."
-    "The next morning."
+    "第二天早上。"
 

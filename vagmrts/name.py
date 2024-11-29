@@ -56,6 +56,9 @@ translate vagmrts strings:
     old "Sister Maria"
     new "玛丽亚修女"
 
+    old "Maria"
+    new "玛丽亚"
+
     old "Mila"
     new "米拉"
 

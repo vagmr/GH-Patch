@@ -295,8 +295,8 @@ screen quick_menu():
             textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
             textbutton _("Auto") action Preference("auto-forward", "toggle")
             textbutton _("Save") action ShowMenu('save')
-            textbutton _("{color=#DA204EFF}vagmrts{/color}") action OpenURL("https://github.com/vagmr")
-            textbutton _("{color=#FF800D}爱发电{/color}") action OpenURL("https://afdian.com/a/vagmrMc")
+            textbutton _("{color=#DA204EFF}GH-About{/color}") action OpenURL("https://vagmr.github.io/GH-Patch/")
+            textbutton _("{color=#FF800D}afdian{/color}") action OpenURL("https://afdian.com/a/vagmrMc")
             textbutton _("Q.Save") action QuickSave()
             textbutton _("Q.Load") action QuickLoad()
 
@@ -338,6 +338,15 @@ style quick_button_text:
 screen navigation():
 
     if main_menu:
+        ## 汉化补丁地址
+        imagebutton:
+            idle Transform("ui/github.png", zoom=0.9)
+            hover Transform("ui/github.png", zoom=1.0)
+            action OpenURL("https://github.com/vagmr/GH-Patch")
+            xalign 0.85
+            yoffset 10
+            xoffset -130
+        ## 官方地址
         imagebutton:
             idle Transform("ui/patreon.png", zoom=0.9)
             hover Transform("ui/patreon.png", zoom=1.0)
@@ -1279,65 +1288,77 @@ style help_label_text:
 ## Todo 汉化作者说明
 screen vagmrts_author():
     style_prefix "vagmrts_author"
-    
-    ## 确保其他屏幕无法接收输入
     modal True
     
     frame:
         background Frame("gui/frame.png", gui.frame_borders, tile=gui.frame_tile)
         xalign 0.5
         yalign 0.5
-        padding (30, 20)
+        padding (40, 30)
         
         vbox:
-            spacing 20
+            spacing 25
             xalign 0.5
             
-            text _("关于汉化")  style "vagmrts_author_title"
+            text _("关于汉化") style "vagmrts_author_title"
             
             hbox:
-                spacing 20
+                spacing 30
                 xalign 0.5
                 
-                textbutton _("版本说明")  action OpenURL("index.html"):
-                    text_color "#DA204EFF"
                 
-                textbutton _("爱发电")  action OpenURL("https://afdian.com/a/vagmrMc"):
-                    style "vagmrts_author_button"
-                    text_color "#FF800D"
-                    text_size 40
+                textbutton _("发布地址"):
+                    style "vagmrts_author_link_button"
+                    action OpenURL("")
+                
+                textbutton _("爱发电"):
+                    style "vagmrts_author_link_button" 
+                    action OpenURL("https://afdian.com/a/vagmrMc")
             
-            ## 修改关闭按钮的 action
-            textbutton _("关闭") text_font "tl/vagmrts/fonts/FZLTCHJW.TTF" action Hide("vagmrts_author"):
+            textbutton _("关闭"):
                 style "vagmrts_author_close_button"
+                action Hide("vagmrts_author")
 
-    ## 允许通过右键或 Escape 键关闭屏幕
     key "game_menu" action Hide("vagmrts_author")
 
-style vagmrts_author_title is gui_label_text:
-    size gui.title_text_size
-    color gui.accent_color
-    font "tl/vagmrts/fonts/gdh.ttf"
+# 添加新的样式定义
+style vagmrts_author_title:
+    font "tl/vagmrts/fonts/KNMaiyuan-Regular.ttf"
+    size 45
+    color "#F1356d"
+    xalign 0.5
+    outlines [(2, "#2c2c2c", 0, 0)]
+
+style vagmrts_author_link_button:
+    background Frame("gui/button/idle_background.png", gui.button_borders, tile=gui.button_tile)
+    hover_background Frame("gui/button/hover_background.png", gui.button_borders, tile=gui.button_tile)
+    padding (30, 15)
+    top_margin 16
+    xminimum 200
+
+style vagmrts_author_link_button_text:
+    font "tl/vagmrts/fonts/KNMaiyuan-Regular.ttf"
+    size 32
+    idle_color "#DA204EFF"
+    hover_color "#FF800D"
+    bold True
+    outlines [(2, "#2c2c2c", 0, 0)]
     xalign 0.5
 
-
-style vagmrts_author_button_text:
-    font "tl/vagmrts/fonts/gdh.ttf"
-    size 36
-   
-
-## 为关闭按钮添加新的样式
-style vagmrts_author_close_button is gui_button:
+style vagmrts_author_close_button:
     background Frame("gui/button/idle_background.png", gui.button_borders, tile=gui.button_tile)
     hover_background Frame("gui/button/hover_background.png", gui.button_borders, tile=gui.button_tile)
     padding (20, 10)
-    xminimum 400
+    xminimum 300
     xalign 0.5
     top_margin 20
 
-style vagmrts_author_close_button_text is gui_button_text:
-    size gui.interface_text_size
-    bold True
+style vagmrts_author_close_button_text:
+    font "tl/vagmrts/fonts/KNMaiyuan-Regular.ttf"
+    size 32
+    idle_color "#ffffff"
+    hover_color "#ffcc00"
+    outlines [(2, "#2c2c2c", 0, 0)]
     xalign 0.5
 
 
@@ -1649,8 +1670,8 @@ screen quick_menu():
             textbutton _("Back") action Rollback()
             textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
             textbutton _("Auto") action Preference("auto-forward", "toggle")
-            textbutton _("{color=#DA204EFF}vagmrts{/color}") action OpenURL("https://github.com/vagmr")
-            textbutton _("{color=#FF800D}爱发电{/color}") action OpenURL("https://afdian.com/a/vagmrMc")
+            textbutton _("{color=#DA204EFF}GH-About{/color}") action OpenURL("https://vagmr.github.io/GH-Patch/")
+            textbutton _("{color=#FF800D}afdian{/color}") action OpenURL("https://afdian.com/a/vagmrMc")
             textbutton _("Q.Save") action QuickSave()
             textbutton _("Q.Load") action QuickLoad()
             textbutton _("Hide") action HideInterface()
