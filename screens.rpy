@@ -4,13 +4,13 @@
 
 init offset = -1
 
-default persistent.textboxopacity = 0.2
+# default persistent.textboxopacity = 0.2
 #default gui.text_size = 32
-default persistent.dialogueTextSize = gui.text_size
+# default persistent.dialogueTextSize = gui.text_size
 #default gui.text_font = "DejaVuSans.ttf"
-default persistent.namedSaves = False
+# default persistent.namedSaves = False
 
-define config.gestures = { "n" : "game_menu", "s" : "hide_windows", "w" : "rollback", "e" : "skip"}
+# define config.gestures = { "n" : "game_menu", "s" : "hide_windows", "w" : "rollback", "e" : "skip"}
 
 ################################################################################
 ## Styles
@@ -26,6 +26,10 @@ style vagmrts_about_button_text:
     color "#F1356d"
     size 36
     hover_color gui.hover_color
+
+style vagmrts_afdian_button_text:
+    variant "small"
+    size 48
 
 style unlockButton:
     hover_color gui.hover_color
@@ -252,7 +256,7 @@ screen choice(items):
 
 ## When this is true, menu captions will be spoken by the narrator. When false,
 ## menu captions will be displayed as empty buttons.
-define config.narrator_menu = True
+# define config.narrator_menu = True
 
 
 style choice_vbox is vbox
@@ -306,7 +310,7 @@ screen quick_menu():
 init python:
     config.overlay_screens.append("quick_menu")
 
-default quick_menu = True
+# default quick_menu = True
 
 style quick_button is default
 style quick_button_text is button_text
@@ -317,6 +321,12 @@ style quick_button:
     padding (15, 5)
     background None
     hover_background Frame("gui/button/hover_background.png", Borders(5, 5, 5, 5))
+
+style quick_button:
+    variant "small"
+    padding gui.button_padding
+    background gui.button_background  
+    hover_background gui.button_hover_background  
 
 style quick_button_text:
     properties gui.button_text_properties("quick_button")
@@ -1083,7 +1093,7 @@ screen history():
 
 ## This determines what tags are allowed to be displayed on the history screen.
 
-define gui.history_allow_tags = { "alt", "noalt" }
+# define gui.history_allow_tags = { "alt", "noalt" }
 
 
 style history_window is empty
@@ -1585,7 +1595,7 @@ screen nvl_dialogue(dialogue):
 
 ## This controls the maximum number of NVL-mode entries that can be displayed at
 ## once.
-define config.nvl_list_length = gui.nvl_list_length
+# define config.nvl_list_length = gui.nvl_list_length
 
 style nvl_window is default
 style nvl_entry is default
