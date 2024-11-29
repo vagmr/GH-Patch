@@ -1299,13 +1299,13 @@ screen vagmrts_author():
                 spacing 20
                 xalign 0.5
                 
-                textbutton _("GitHub") text_font "tl/vagmrts/fonts/ysbth.ttf" action OpenURL("https://github.com/vagmr"):
-                    style "vagmrts_author_button"
+                textbutton _("版本说明")  action OpenURL("index.html"):
                     text_color "#DA204EFF"
                 
-                textbutton _("爱发电") text_font "tl/vagmrts/fonts/ysbth.ttf" action OpenURL("https://afdian.com/a/vagmrMc"):
+                textbutton _("爱发电")  action OpenURL("https://afdian.com/a/vagmrMc"):
                     style "vagmrts_author_button"
                     text_color "#FF800D"
+                    text_size 40
             
             ## 修改关闭按钮的 action
             textbutton _("关闭") text_font "tl/vagmrts/fonts/FZLTCHJW.TTF" action Hide("vagmrts_author"):
@@ -1317,19 +1317,14 @@ screen vagmrts_author():
 style vagmrts_author_title is gui_label_text:
     size gui.title_text_size
     color gui.accent_color
-    font "tl/vagmrts/fonts/ysbth.ttf"
+    font "tl/vagmrts/fonts/gdh.ttf"
     xalign 0.5
 
-style vagmrts_author_button is gui_button:
-    background Frame("gui/button/idle_background.png", gui.button_borders, tile=gui.button_tile)
-    hover_background Frame("gui/button/hover_background.png", gui.button_borders, tile=gui.button_tile)
-    padding (20, 10)
-    xminimum 200
 
-style vagmrts_author_button_text is gui_button_text:
+style vagmrts_author_button_text:
+    font "tl/vagmrts/fonts/gdh.ttf"
     size 36
-    bold True
-    xalign 0.5
+   
 
 ## 为关闭按钮添加新的样式
 style vagmrts_author_close_button is gui_button:
