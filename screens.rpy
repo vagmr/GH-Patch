@@ -27,6 +27,10 @@ style vagmrts_about_button_text:
     size 36
     hover_color gui.hover_color
 
+style vagmrts_about_button_text:
+    variant "small"
+    size 48
+
 style vagmrts_afdian_button_text:
     variant "small"
     size 48
@@ -324,9 +328,7 @@ style quick_button:
 
 style quick_button:
     variant "small"
-    padding gui.button_padding
-    background gui.button_background  
-    hover_background gui.button_hover_background  
+    padding (10, 5)
 
 style quick_button_text:
     properties gui.button_text_properties("quick_button")
@@ -335,6 +337,9 @@ style quick_button_text:
     hover_color "#ff6b6b"
     outlines [(2, "#2c2c2c", 0, 0)]
 
+style quick_button_text:
+    variant "small"
+    size 40
 
 ################################################################################
 ## Main and Game Menu Screens
@@ -1688,9 +1693,33 @@ screen quick_menu():
             textbutton _("Menu") action ShowMenu()
 
 
+
 style window:
     variant "small"
     background "gui/phone/textbox.png"
+    xalign 0.5                   
+    yalign 1.0                     
+    xsize 0.9                     
+    xfill False                   
+    ysize 185     
+    
+# 修改对话文本样式以适应新的对话框宽度
+style say_dialogue:
+    variant "small"
+    properties gui.text_properties("dialogue")
+    xalign 0.35                   
+    xsize 0.8                     
+    ypos 45                      
+    yalign 0.5                    
+    outlines [(3, "#000", 0, 0)]
+
+# 调整名字框位置
+style namebox:
+    variant "small"
+    xalign 0.15                   
+    ypos -20                      
+    yalign 0.0                   
+    ysize 30                     
 
 style radio_button:
     variant "small"
